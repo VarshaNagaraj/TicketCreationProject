@@ -1,0 +1,52 @@
+page-sign-up {
+    alert-md .alert-head {
+
+        text-align: center !important;
+        padding: 24px 24px 20px;
+    }
+
+    .toggle.toggle-my-theme input:checked + .track {
+        border-color: #0081C6;
+        background-color: #0081C6;
+    }
+
+    .toggle-text > .track {
+ 
+        width: auto;
+        padding-left: 25px;
+        padding-right: 25px;
+        border: 0;
+        height: 30px;
+        background: #9e9e9e; 
+      }
+       
+      .toggle-text .handle {
+        left: 6px;
+      }
+       
+      .toggle-text .handle-text {
+        font-size: 24px;
+        color: white;
+        position: absolute;
+        top: -5px;
+        
+      }
+       
+      .toggle-text .handle-text-false {
+        left: 36px;
+      }
+       
+      .toggle-text input:checked + .track .handle {
+        -webkit-transform: none;
+        -moz-transform: none;
+        transform: none;
+        left: calc(100% - 34px);  
+      }
+      .track-text {
+        line-height: 26px;
+        color: white;
+        font-size: 18px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }  
+}

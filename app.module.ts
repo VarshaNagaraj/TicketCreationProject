@@ -17,6 +17,11 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AdminStoryListPageModule } from '../pages/admin-story-list/admin-story-list.module';
 import { AdminStoryReviewPageModule } from '../pages/admin-story-review/admin-story-review.module';
+import { SignUpPage } from '../pages/sign-up/sign-up';
+import { AdminStoryListPage } from '../pages/admin-story-list/admin-story-list';
+import { AdminStoryReviewPage } from '../pages/admin-story-review/admin-story-review';
+import { ListUserStoryPage } from '../pages/list-user-story/list-user-story';
+import { CreateUserStoryPage } from '../pages/create-user-story/create-user-story';
 @NgModule({
   declarations: [
     MyApp,
@@ -43,13 +48,14 @@ import { AdminStoryReviewPageModule } from '../pages/admin-story-review/admin-st
     AdminStoryListPageModule,
     AdminStoryReviewPageModule,
     ListUserStoryPageModule,
-    CreateUserStoryPageModule,
+    CreateUserStoryPageModule
    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    SignUpPage,
+
   ],
   providers: [
     StatusBar,

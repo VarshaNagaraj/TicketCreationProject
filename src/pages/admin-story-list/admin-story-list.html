@@ -12,8 +12,8 @@
 
 <ion-content padding style="background-color: lightgray;">
 
-  <ion-card  *ngFor="let ticket of tickets" (click)="reviewTicket(ticket)">
-
+  <ion-card *ngFor="let ticket of tickets" (click)="reviewTicket(ticket)">
+    <ion-item>{{ticket.id}}</ion-item>
     <ion-item [color]="ticket.status=='accepted'?'rejected'? 'secondary':'danger':'dark'">
       <ion-avatar item-start style="margin-bottom:15px;margin-top:0px;">
         <img src="assets/icon/favicon.ico">
@@ -21,7 +21,7 @@
       <h2>{{ticket.email}}</h2>
       <p>{{ticket.summary}}</p>
 
-        <button ion-button style="float:right;">{{ticket.complexity}}</button>
+      <button ion-button style="float:right;">{{ticket.complexity}}</button>
 
     </ion-item>
 
@@ -32,7 +32,7 @@
     <ion-row>
       <ion-col>
         <button ion-button icon-start clear small>
-         <p>ETR:</p>
+          <p>ETR:</p>
           <div>{{ticket.ETR}}</div>
         </button>
       </ion-col>

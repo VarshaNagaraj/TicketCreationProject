@@ -17,9 +17,6 @@ import { root } from 'rxjs/internal/util/root';
 })
 export class MyApp {
   rootPage: any = SignUpPage; //starting page
-  //rootPage:any = ListUserStoryPage;
-  //rootPage:any= CreateUserStoryPage;
-  //rootPage:any= AdminStoryListPage;
   @ViewChild(Nav) nav: Nav;
   users: any;
   user: any = {};
@@ -51,22 +48,23 @@ export class MyApp {
               this.users = this.afDatabase.list(`/users`, ref => ref.orderByChild(email)).valueChanges();
               this.users.subscribe((valueOfItems) => {
                 console.log(valueOfItems);
-                for (var i: any = 0; i <= valueOfItems.length; i++)
+                for (let i = 0; i < valueOfItems.length; i++)
                 {
-                  //console.log(valueOfItems[i].username);
-                  if (email === valueOfItems[i].email)
+                 
+                  if (valueOfItems[i].email === email)
                   {
-                    // console.log(valueOfItems[i]);
+                    
                     this.user = valueOfItems[i];
                     console.log(this.user);
                     if (this.user)
                     {
-                      this.nav.setRoot('ListUserStoryPage', { userDetail: this.user });
-                      //console.log("sent to ConferencePage");
+                      console.log("sent to ConferencePage");
+                      this.nav.setRoot(ListUserStoryPage, { userDetail: this.user });
+
                     } else
                     {
                       console.log("User doesn't exist");
-                      this.nav.setRoot('SignUpPage');
+                      this.nav.setRoot(SignUpPage);
                     }
                   }
                 }
@@ -74,7 +72,7 @@ export class MyApp {
             } else
             {
               console.log("No login found");
-              this.nav.setRoot('SignUpPage');
+              this.nav.setRoot(SignUpPage);
             }
           });
         }
@@ -87,22 +85,21 @@ export class MyApp {
               this.users = this.afDatabase.list(`/users`, ref => ref.orderByChild(email)).valueChanges();
               this.users.subscribe((valueOfItems) => {
                 console.log(valueOfItems);
-                for (var i: any = 0; i <= valueOfItems.length; i++)
+                for (let i = 0; i <= valueOfItems.length; i++)
                 {
-                  //console.log(valueOfItems[i].username);
+
                   if (email === valueOfItems[i].email)
                   {
-                    // console.log(valueOfItems[i]);
+
                     this.user = valueOfItems[i];
                     console.log(this.user);
                     if (this.user)
                     {
-                      this.nav.setRoot('AdminStoryListPage', { userDetail: this.user });
-                      //console.log("sent to ConferencePage");
+                      this.nav.setRoot(AdminStoryListPage, { userDetail: this.user });
                     } else
                     {
                       console.log("User doesn't exist");
-                      this.nav.setRoot('SignUpPage');
+                      this.nav.setRoot(SignUpPage);
                     }
                   }
                 }
@@ -110,13 +107,13 @@ export class MyApp {
             } else
             {
               console.log("No login found");
-              this.nav.setRoot('SignUpPage');
+              this.nav.setRoot(SignUpPage);
             }
           });
         }
         else if (rootPage == 'SignUpPage')
         {
-          this.nav.setRoot('SignUpPage');
+          this.nav.setRoot(SignUpPage);
         }
       });
     });

@@ -3,13 +3,17 @@
     <ion-title style="text-align:center;font-weight: bolder;">Create Ticket </ion-title>
   </ion-navbar>
 </ion-header>
+
 <ion-content padding>
   <div class="container">
+
     <ion-list>
+
       <ion-item>
         <ion-label color="primary" fixed>Summary</ion-label>
         <ion-input [(ngModel)]="ticket.summary">{{ticket.summary}}</ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label color="primary">Type</ion-label>
         <ion-select placeholder="Select" [(ngModel)]="ticket.type">
@@ -19,6 +23,7 @@
           <ion-option value="QA">QA</ion-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label color="primary">Complexity</ion-label>
         <ion-select placeholder="Select" [(ngModel)]="ticket.complexity">
@@ -27,31 +32,40 @@
           <ion-option value="high">High</ion-option>
         </ion-select>
       </ion-item>
+
       <ion-item>
         <ion-label position="stacked" style="color:#488aff !important;">Description</ion-label>
         <ion-textarea style="margin-left:4% !important;" [(ngModel)]="ticket.description">{{ticket.description}}
         </ion-textarea>
-
       </ion-item>
 
       <ion-item>
         <ion-label color="primary" fixed>ETR</ion-label>
         <ion-input style="margin-left:25% !important;" [(ngModel)]="ticket.ETR">{{ticket.ETR}}</ion-input>
       </ion-item>
+
       <ion-item>
         <ion-label color="primary" fixed>Cost</ion-label>
         <ion-input type="number" placeholder="$" style="margin-left:35% !important;" [(ngModel)]="ticket.cost">
           {{ticket.cost | currency : currency : 'symbol' : '0.0'}}</ion-input>
       </ion-item>
+
     </ion-list>
 
-      <div  style="display: flex; justify-content: center;border-radius:10px;">
-        <button style="margin:0px;padding:0px;width:100px;" [disabled]='ticket.summary==""||ticket.description==""||ticket.ETR==""||ticket.cost==""||ticket.complexity==""||ticket.type=="" 'ion-button color="primary" block tappable (click)="submit(ticket.summary,ticket.type,ticket.complexity,ticket.description,ticket.ETR,ticket.cost)">SUBMIT</button>
-      </div>
-      <br>
-      <div  style="display: flex; justify-content: center;border-radius:10px;">
-        <button style="margin:0px;padding:0px;width:100px;" ion-button color="primary" block tappable (click)="cancel()">CANCEL</button>
-      </div>
+    <div style="display: flex; justify-content: center;border-radius:10px;">
+      <button style="margin:0px;padding:0px;width:100px;"
+        [disabled]='ticket.summary==""||ticket.description==""||ticket.ETR==""||ticket.cost==""||ticket.complexity==""||ticket.type=="" '
+        ion-button color="primary" block tappable
+        (click)="submit(ticket.summary,ticket.type,ticket.complexity,ticket.description,ticket.ETR,ticket.cost)">SUBMIT</button>
+    </div>
+
+    <br>
+
+    <div style="display: flex; justify-content: center;border-radius:10px;">
+      <button style="margin:0px;padding:0px;width:100px;" ion-button color="primary" block tappable
+        (click)="cancel()">CANCEL</button>
+    </div>
+
   </div>
 
 

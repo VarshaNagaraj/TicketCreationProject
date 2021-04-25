@@ -72,7 +72,7 @@ export class AdminStoryReviewPage {
             console.log('OK clicked');
             this.ticket.status = "rejected";
             this.update(this.ticket.status, this.ticket.email);
-            this.navCtrl.pop();
+            
           }
         }
       ]
@@ -82,15 +82,18 @@ export class AdminStoryReviewPage {
   }
 
   update(status, email) {
+     console.log(status);
+     console.log(email);
     this.afDatabase.list('/tickets', ref => ref.orderByChild('email').equalTo(this.ticket.email)).snapshotChanges()
       .subscribe(actions => {
         actions.forEach(action => {
           // Firebase Key is Obtained
-          //console.log(action.key);
+          console.log(action.key);
           this.ID = action.key;
           this.afDatabase.list('/tickets').update(this.ID, {
             status: status
           });
+          this.navCtrl.pop();
         })
       })
 

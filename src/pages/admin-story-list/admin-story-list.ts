@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { AdminStoryReviewPage } from '../admin-story-review/admin-story-review';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the AdminStoryListPage page.
  *
@@ -25,6 +26,7 @@ export class AdminStoryListPage {
   noActionFlag:boolean=false;
   constructor(public navCtrl: NavController,
     public afDatabase: AngularFireDatabase,
+    public LocalStorage: Storage,
      public navParams: NavParams) {
     this.user = this.navParams.get('userDetail');
     console.log(this.user);
@@ -32,6 +34,7 @@ export class AdminStoryListPage {
 
   ionViewDidEnter() {
     console.log('ionViewDidLoad AdminStoryListPage');
+    this.LocalStorage.set('root', 'AdminStoryListPage');
     this.ticketSubscription = this.afDatabase.list('/tickets').valueChanges();
     this.ticketSubscription.subscribe(data => {
       this.tickets = data;

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CreateUserStoryPage } from '../create-user-story/create-user-story';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the ListUserStoryPage page.
  *
@@ -26,6 +27,7 @@ export class ListUserStoryPage {
   noActionFlag:boolean=false;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
+    public LocalStorage: Storage,
     public afDatabase: AngularFireDatabase,) {
     this.user = this.navParams.get('userDetail');
     console.log(this.user);
@@ -35,6 +37,7 @@ export class ListUserStoryPage {
 
   ionViewDidEnter() {
     console.log('ionViewDidLoad ListUserStoryPage');
+    this.LocalStorage.set('root', 'ListUserStoryPage');
     //this.ticket = this.navParams.get('ticketDetail');
     this.ticketSubscription = this.afDatabase.list('/tickets').valueChanges();
     this.ticketSubscription.subscribe(data => {

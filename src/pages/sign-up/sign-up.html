@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title style="text-align:center;font-weight: bolder;color:grey">ARCHIMYDES</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding disable-scroll>
+  <div>
+    <ion-item style="background-color: white;">
+      <ion-input type="text" placeholder="Email address" [(ngModel)]="user.email"
+        style="font-size:20px;color:black;font-family:Arial;">{{user.email}}</ion-input>
+    </ion-item>
+
+    <ion-item style="background-color: white;">
+      <ion-input type="password" placeholder="Password" [(ngModel)]="user.password"
+        style="font-size:20px;color:black;font-family:Arial;">{{user.password}}</ion-input>
+    </ion-item>
+
+    <ion-item style="background-color: white;">
+      <ion-label style="font-size:20px;color:black;font-family:Arial;margin-right:0px;">User Profile
+        <ion-segment mode="ios" (ionChange)="userProfile($event)" style="width:40%;float:right;" [(ngModel)]="user.profile">
+          <ion-segment-button value="admin">
+            <ion-label style="font-size:10px;color:black;margin:0px;">Admin</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="user">
+            <ion-label style="font-size:10px;color:black;margin:0px;">User</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+      </ion-label>
+    </ion-item>
+    
+  </div>
+
+  <div style="display: flex; justify-content: center;">
+    <button
+      style="border-radius: 20px; background-color:#488aff;color:black;font-size:20px;margin-top: 10%;width:250px;height:45px;"
+      ion-button color="dark" block tappable (click)="createNewUser(user.email,user.password,user.profile)"
+      [disabled]='user.email==""||user.password=="" '>Log In</button>
+  </div>
+
+</ion-content>

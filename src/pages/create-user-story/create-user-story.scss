@@ -1,0 +1,35 @@
+page-create-user-story {
+
+
+    .list{
+        margin:0px;
+        height:75%;
+    }
+    .text-input-md {
+        margin: 13px 8px;
+        padding: 0;
+        width: calc(100% - 8px - 8px);
+        margin-left:35px;
+        font-size:17px;
+    }
+
+    .text-input-ios {
+        margin: 17px 8px 11px ;
+        padding: 0;
+        margin-left:35px;
+        width: calc(100% - 8px);
+        font-size:17px;
+    }
+
+    .container { 
+        height: 80%;
+        position: relative;
+        border: 1px solid grey; 
+        border-radius: 2px;
+      }
+
+    .input[type=number] {
+        content: "$";
+    }
+}
+

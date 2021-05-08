@@ -30,13 +30,15 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp({
-      apiKey: "*****************",// has been edited
-      authDomain: "archimydes-c8a4c.firebaseapp.com",
-      projectId: "archimydes-c8a4c",
-      storageBucket: "archimydes-c8a4c.appspot.com",
-      messagingSenderId: " ",
-      appId: "1:184653836906:web:eb17912e**********",
-      measurementId: "G-MBH*******"
+         //Values from Firebase-CONFIDENTIAL
+      apiKey: "",
+      authDomain: "",
+      databaseURL: "",
+      projectId: "",
+      storageBucket: "",
+      messagingSenderId: "",
+      appId: "",
+      measurementId: ""
     }),
     AngularFireDatabaseModule,
     AngularFirestoreModule,

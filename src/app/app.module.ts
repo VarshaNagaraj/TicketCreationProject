@@ -30,13 +30,13 @@ import { SignUpPage } from '../pages/sign-up/sign-up';
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp({
-      apiKey: "AIzaSyBcOw5w0oMjeC3JPgbbXwr35T88_fsBb3Q",
+      apiKey: "*****************",// has been edited
       authDomain: "archimydes-c8a4c.firebaseapp.com",
       projectId: "archimydes-c8a4c",
       storageBucket: "archimydes-c8a4c.appspot.com",
-      messagingSenderId: "184653836906",
-      appId: "1:184653836906:web:eb17912eb05b2b77fb1013",
-      measurementId: "G-MBH3T5BGD7"
+      messagingSenderId: " ",
+      appId: "1:184653836906:web:eb17912e**********",
+      measurementId: "G-MBH*******"
     }),
     AngularFireDatabaseModule,
     AngularFirestoreModule,
